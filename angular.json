@@ -124,8 +124,13 @@
               "devServerTarget": "ng022020:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ng022020"
 }

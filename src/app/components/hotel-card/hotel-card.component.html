@@ -1,0 +1,7 @@
+<ng-container>
+    <div class="element">
+        <element-left (currentHotel)="this.currentHotel($event)" class="element-left" [activeHotelInformation]="activeHotel" [hotelInformation]="hotels"></element-left>
+        <element-right class="element-right" [activeHotelInformation]="activeHotel"></element-right>
+        <div class="clear"> </div>
+    </div>
+</ng-container>

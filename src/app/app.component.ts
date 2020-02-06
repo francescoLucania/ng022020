@@ -1,21 +1,30 @@
 import {Component, OnInit} from '@angular/core';
+import {dataService} from "./services/dataService/data.service";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-    title = 'Look jQuery Animation working in action!';
+    // @ts-ignore
+    public appData!: any;
 
-    public ngOnInit() {
-        $(document).ready(function () {
-            $('.log-close').on('click', function () {
-                $('.login-bottom').fadeOut('slow', function () {
-                    $('.login-bottom').remove();
-                });
-            });
+    constructor (private dataService: dataService) {
+
+    }
+
+    public title!: 'appTitle';
+
+    public activeHotel!: Object;
+
+    public ngOnInit(): void {
+        this.dataService.getAppInfo().subscribe((data: any)=>{
+            this.appData = data['mockData'];
         });
-        // scrollbar start
+
+        setTimeout(()=> {
+        }, 1500);
+
     }
 }
