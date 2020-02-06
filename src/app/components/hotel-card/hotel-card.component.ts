@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+// import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-hotel-card',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class HotelCardComponent implements OnInit {
 
-  public activeHotel!: any;
+  public activeHotel$!: any;
 
   @Input()
   public hotels!: any;
@@ -27,7 +28,7 @@ export class HotelCardComponent implements OnInit {
   }
 
   public initActiveHotel(hotel: object) {
-    this.activeHotel = hotel;
+    this.activeHotel$ = hotel;
   }
 
 }

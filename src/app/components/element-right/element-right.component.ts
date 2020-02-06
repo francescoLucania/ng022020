@@ -9,14 +9,11 @@ export class ElementRightComponent implements OnInit {
 
   @Input() activeHotelInformation!: any;
 
-  public activeSocialInfo!: any;
-
   constructor() {
 
   }
 
   ngOnInit(): void {
-    this.activeSocialInfo = this.activeHotelInformation.social_info;
   }
 
 }
