@@ -1,8 +1,11 @@
 <div>
-  <h1>{{title}}</h1>
-  <ng-container *ngIf="appData">
+  <ng-container *ngIf="appData; else loader">
+    <h1>{{title}}</h1>
     <app-hotel-card [hotels]="appData"></app-hotel-card>
   </ng-container>
+  <ng-template #loader>
+    <h1>loading</h1>
+  </ng-template>
   <div class="copy-right">
     <p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
   </div>

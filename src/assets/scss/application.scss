@@ -346,6 +346,13 @@ i.text-info{
     margin-bottom: 1.5em;
   }
 }
+
+.teddy-text img.img-responsive {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
 @media(max-width:1366px){
   .element-left {
     width: 55%;

@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as $ from "jquery";
+import { AsYouType } from 'libphonenumber-js'
+
 
 @Component({
     selector: 'element-left',
@@ -36,4 +38,7 @@ export class ElementLeftComponent implements OnInit {
         // scrollbar start
     }
 
+    phoneNumber(stringNumber: string) {
+        return new AsYouType().input(stringNumber)
+    }
 }

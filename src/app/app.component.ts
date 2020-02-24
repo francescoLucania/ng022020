@@ -1,30 +1,31 @@
 import {Component, OnInit} from '@angular/core';
-import {dataService} from "./services/dataService/data.service";
+import dataService from "./services/dataService/data.service";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent implements OnInit {
-    // @ts-ignore
-    public appData!: any;
 
     constructor (private dataService: dataService) {
-
     }
 
-    public title!: 'appTitle';
+    public title!: String;
 
-    public activeHotel!: Object;
+    public activeHotel!: any;
+
+    public appData!: any;
 
     public ngOnInit(): void {
-        this.dataService.getAppInfo().subscribe((data: any)=>{
+        this.title = 'Hotels Card';
+
+        console.log('dataService', dataService)
+
+        this.dataService.getHotelInfo().subscribe((data: any)=> {
+            console.log(data);
             this.appData = data['mockData'];
         });
-
-        setTimeout(()=> {
-        }, 1500);
-
     }
 }
